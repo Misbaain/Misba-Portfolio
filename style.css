@@ -1,0 +1,238 @@
+/* Google Fonts */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Background Animation */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a6c1ee);
+    background-size: 1000% 1000%;
+    animation: rainbowBG 20s ease infinite;
+    z-index: -2;
+}
+
+@keyframes rainbowBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Profile Picture */
+.pic {
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 10px 25px rgba(106, 27, 154, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+}
+
+.pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.pic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(106, 27, 154, 0.5);
+}
+
+.pic:hover img {
+    transform: scale(1.1);
+}
+
+/* Header */
+header {
+    background-color: hwb(280 10% 30%);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: min-content;
+}
+
+.header-content {
+    text-align: center;
+    margin-top: 15px;
+    animation: fadeInDown 1.5s ease;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 0 0 10px #a64ac9, 0 0 20px #a64ac9;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #a64ac9, 0 0 20px #a64ac9;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #a64ac9;
+    }
+}
+
+header p {
+    font-size: 18px;
+}
+
+/* Navigation */
+nav {
+    margin: 20px 0;
+    text-align: center;
+}
+
+nav a {
+    color: #6A1B9A;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #2e0560;
+    transform: translateY(-2px);
+    font-weight: bolder;
+    font-style: italic;
+}
+
+nav a.active {
+    color: #6A1B9A;
+    font-weight: bold;
+}
+
+/* Section Styling */
+section {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+section:hover {
+    transform: scale(1.03);
+    background: linear-gradient(135deg, rgba(106, 27, 154, 0.05), rgba(255, 255, 255, 0.1));
+    box-shadow: 0 15px 25px rgba(106, 27, 154, 0.2), 0 5px 20px rgba(106, 27, 154, 0.1);
+    border: 1px solid #6A1B9A;
+    z-index: 1;
+}
+
+section h2 {
+    color: #6A1B9A;
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #6A1B9A;
+    padding-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: #6A1B9A;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #4A148C;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav a {
+        margin: 0 10px;
+        font-size: 1em;
+    }
+
+    section {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 20px 0;
+    }
+
+    nav a {
+        margin: 0 5px;
+        font-size: 0.9em;
+    }
+
+    footer {
+        font-size: 0.8em;
+        padding: 15px 0;
+    }
+}
+
+/* Optional Background Particles Canvas */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+}
+
+#bubbleCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
